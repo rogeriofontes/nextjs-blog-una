@@ -25,7 +25,7 @@ function BlogPage() {
                     <ul>
                         <li>Id: {item.userId}</li>
                         <li>Name: {item.title}</li>
-                        <li>Language: {item.body}</li>
+                        <li>Post: {item.body}</li>
                     </ul>
                 ))}
         </div>
