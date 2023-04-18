@@ -1,9 +1,9 @@
 import Head from "next/head";
-import Link from "next/link";
 import styles from "../styles/Home.module.css";
 import buttonStyles from "../styles/Button.module.css";
 import messageStyles from "../styles/Message.module.css";
-import Navbar from "../components/navbar";
+import Navbar from "../src/components/Navbar";
+import CustomLink from "../src/components/CustomLink";
 
 function HomePage() {
     return (
@@ -19,9 +19,9 @@ function HomePage() {
                 Something has been successfully done.
             </div>
             <br />
-            <Link href="/blog" legacyBehavior>
+            <CustomLink href="/blog">
                 Blog
-            </Link>
+            </CustomLink>
             <div className={messageStyles.error}>Oop! We ran into a problem.</div>
 
             <br />

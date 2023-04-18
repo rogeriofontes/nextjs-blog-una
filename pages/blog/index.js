@@ -1,4 +1,5 @@
 import useSWR from 'swr';
+import CustomLink from "../../src/components/CustomLink";
 
 const url = 'https://jsonplaceholder.typicode.com/posts'
 //const usl = "api/staticdata"
@@ -16,18 +17,24 @@ function BlogPage() {
     //Handle the loading state
     if (!data) return <div>Loading...</div>;
     //Handle the ready state and display the result contained in the data object mapped to the structure of the json file
+    //href={{pathname: "/blog", query: { id: item.id}}}
 
     return (
         <div>
             <h1>Blog</h1>
+            <CustomLink href="/">
+                Voltar para Home
+            </CustomLink>
+            
             {data &&
                 data?.map((item) => (
                     <ul>
-                        <li>Id: {item.userId}</li>
-                        <li>Name: {item.title}</li>
-                        <li>Language: {item.body}</li>
+                        <li><CustomLink href={`/blog/${item.id}`}><b>Id:</b> {item.userId}</CustomLink></li>
+                        <li><b>Name:</b> {item.title}</li>
+                        <li><b>Language:</b> {item.body}</li>
                     </ul>
                 ))}
+
         </div>
     );
 }
